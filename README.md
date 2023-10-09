@@ -1,5 +1,5 @@
 # Overview
-How to Delete AWS Glacier Vaults
+How to Delete AWS Glacier Vaults.
 
 ## Step 1 initiate-job
 Run a job to get the inventory of the vault. This will create a job that collects required information about the vault.
@@ -38,7 +38,7 @@ export AWS_VAULT_NAME=cvast-YOUR_VAULT_NAME
 ```
 
 ## Step 5 Update Vault Name
-1. Rename `glacier_delete_archive_YOUR_VAULT_NAME.sh` and update `YOUR_VAULT_NAME`
+1. Rename `glacier_delete_archive_YOUR_VAULT_NAME.sh` and update `YOUR_VAULT_NAME`.
 2. Open bash script and update `YOUR_VAULT_NAME` references in the script.
 
 ## Step 6 Run script
