@@ -5,36 +5,36 @@ How to Delete AWS Glacier Vaults
 Run a job to get the inventory of the vault. This will create a job that collects required information about the vault.
 
 ```
-$ aws glacier initiate-job --job-parameters '{"Type": "inventory-retrieval"}' --account-id YOUR_ACCOUNT_ID --region YOUR_REGION --vault-name YOUR_VAULT_NAME
+aws glacier initiate-job --job-parameters '{"Type": "inventory-retrieval"}' --account-id YOUR_ACCOUNT_ID --region YOUR_REGION --vault-name YOUR_VAULT_NAME
 ```
 
 ## Step 2 list-jobs
 Query system to list job. Copy the `JobId` (including the quotes) for the next step.
 
 ```
-$ aws glacier list-jobs --account-id YOUR_ACCOUNT_ID --region YOUR_REGION --vault-name YOUR_VAULT_NAME
+aws glacier list-jobs --account-id YOUR_ACCOUNT_ID --region YOUR_REGION --vault-name YOUR_VAULT_NAME
 ```
 
 ## Step 3 get-job-output
 Use `JobId` from the previous step and output inventory to a json file.
 
 ```
-$ aws glacier get-job-output --account-id YOUR_ACCOUNT_ID --region YOUR_REGION --vault-name YOUR_VAULT_NAME --job-id YOUR_JOB_ID ./YOUR_VAULT_NAME.json
+aws glacier get-job-output --account-id YOUR_ACCOUNT_ID --region YOUR_REGION --vault-name YOUR_VAULT_NAME --job-id YOUR_JOB_ID ./YOUR_VAULT_NAME.json
 ```
 
 ## Step 4 Set Environment Variables
 Set the following parameters through environment variables:
 
 ```
-$ export AWS_ACCOUNT_ID=YOUR_ACCOUNT_ID
+export AWS_ACCOUNT_ID=YOUR_ACCOUNT_ID
 ```
 
 ```
-$ export AWS_REGION=YOUR_REGION
+export AWS_REGION=YOUR_REGION
 ```
 
 ```
-$ export AWS_VAULT_NAME=cvast-YOUR_VAULT_NAME
+export AWS_VAULT_NAME=cvast-YOUR_VAULT_NAME
 ```
 
 ## Step 5 Update Vault Name
